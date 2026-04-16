@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Cost Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Import Latitude 37 brand fonts via Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header with logo -->
+  <header class="site-header">
+    <img src="logo.png" alt="Latitude 37 logo" class="logo">
+  </header>
+
+  <div id="app" class="container">
+    <div id="form-section" class="panel form-panel">
+      <h1>What could your project actually cost?</h1>
+      <p class="intro">Select the options below to build an indicative budget.  The ranges are based on typical Melbourne projects for 2024–25 and include soft costs that are often overlooked.</p>
+
+      <!-- Direction -->
+      <div class="question" data-group="type">
+        <h2>Direction <span class="small">Are you renovating or rebuilding?</span></h2>
+        <div class="options">
+          <button class="option-btn" data-value="reno" title="Renovating an existing home">Renovating</button>
+          <button class="option-btn" data-value="rebuild" title="Demolish and rebuild the home from scratch">Demolish &amp; rebuild</button>
+          <button class="option-btn" data-value="unsure" title="Not sure which option yet">Not sure yet</button>
+        </div>
+      </div>
+
+      <!-- Size -->
+      <div class="question" data-group="size">
+        <h2>Scale <span class="small">Approximate floor area</span></h2>
+        <div class="options">
+          <button class="option-btn" data-value="s" title="Up to 200 m²">Under 200&nbsp;m²</button>
+          <button class="option-btn" data-value="m" title="Around 270 m²">200&nbsp;–&nbsp;350&nbsp;m²</button>
+          <button class="option-btn" data-value="l" title="Around 420 m²">350&nbsp;–&nbsp;500&nbsp;m²</button>
+          <button class="option-btn" data-value="xl" title="600 m² or more">Over 500&nbsp;m²</button>
+        </div>
+      </div>
+
+      <!-- Scope -->
+      <div class="question" data-group="scope">
+        <h2>Scope <span class="small">How much of the home is involved?</span></h2>
+        <div class="options">
+          <button class="option-btn" data-value="partial" title="Renovate targeted rooms or areas">Targeted rooms or areas</button>
+          <button class="option-btn" data-value="full" title="Update the full interior of the home">Full interior renovation</button>
+          <button class="option-btn" data-value="whole" title="Renovate or rebuild the entire home including structure">Whole home including structure</button>
+        </div>
+      </div>
+
+      <!-- Site -->
+      <div class="question" data-group="site">
+        <h2>Site <span class="small">How complex is the site?</span></h2>
+        <div class="options">
+          <button class="option-btn" data-value="easy" title="Flat site with good access">Straightforward</button>
+          <button class="option-btn" data-value="moderate" title="Some complexity – slope, heritage or tight access">Some complexity</button>
+          <button class="option-btn" data-value="complex" title="High complexity – significant constraints">High complexity</button>
+        </div>
+      </div>
+
+      <!-- Finish -->
+      <div class="question" data-group="finish">
+        <h2>Finish <span class="small">What level of finish are you expecting?</span></h2>
+        <div class="options">
+          <button class="option-btn" data-value="quality" title="Solid, well‑specified finishes">Quality</button>
+          <button class="option-btn" data-value="premium" title="Elevated materials and detailing">Premium</button>
+          <button class="option-btn" data-value="bespoke" title="Custom everything, no compromises">Bespoke</button>
+        </div>
+      </div>
+
+      <!-- Occupancy -->
+      <div class="question" data-group="occupancy">
+        <h2>Occupancy <span class="small">Where will you live during works?</span></h2>
+        <div class="options">
+          <button class="option-btn" data-value="out" title="Move out and rent or stay elsewhere">Moving out</button>
+          <button class="option-btn" data-value="in" title="Live in the house during works">Living in during works</button>
+          <button class="option-btn" data-value="tbd" title="Not yet decided">Not yet decided</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-section" class="panel result-panel">
+      <h2>Your estimate</h2>
+      <div id="placeholder" class="placeholder">Select your project details on the left and a cost range will build here as you go.</div>
+      <div id="results" class="results" hidden>
+        <div class="range-block">
+          <div class="range-label">Construction estimate</div>
+          <div class="range-value" id="construction-range">—</div>
+          <div class="range-note" id="construction-note"></div>
+        </div>
+        <div class="soft-costs">
+          <div class="soft-costs-title">Likely additional costs</div>
+          <ul id="soft-costs-list"></ul>
+        </div>
+        <div class="total-bar">
+          <div class="t-label">Total likely range</div>
+          <div class="t-value" id="total-range">—</div>
+        </div>
+        <div class="insights" id="insights"></div>
+        <div class="actions">
+          <button id="print-btn">↓ Print / save</button>
+          <button id="copy-btn">↗ Copy summary</button>
+        </div>
+        <div class="disclaimer">
+          This tool provides an estimate of broad costs only, based on typical Melbourne projects as at 2024–25. It is intended to support early conversations and does not replace a detailed brief or quantity surveyor estimate.
+        </div>
+        <div class="cta">Want a clearer picture of your individual position?
+          <button class="cta-btn" onclick="window.open('https://www.l37.com.au/contact/', '_blank')">Contact our team</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+/* Basic styles for the cost calculator micro‑app */
+
+body {
+  /* Use the Jost font family for body copy as specified in the Latitude 37 brand guide */
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  background: #edece8;
+  color: #4b4f55;
+}
+
+/* Header */
+.site-header {
+  background: #edece8;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #d8d7d3;
+}
+
+/* Logo: constrain width to 250px */
+.site-header .logo {
+  width: 250px;
+  height: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  margin: 24px auto;
+  background: #edece8;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  min-height: calc(100vh - 80px);
+}
+
+.panel {
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.form-panel {
+  flex: 1;
+  border-right: 1px solid #d8d7d3;
+  overflow-y: auto;
+  background: #edece8;
+  padding: 32px;
+}
+
+.result-panel {
+  width: 400px;
+  background: #4b4f55;
+  color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: auto;
+  overflow-y: auto;
+  padding: 32px;
+}
+
+.result-panel h2 {
+  /* Use Cormorant Garamond for secondary headings in the results panel */
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.intro {
+  color: #4b4f55;
+  margin-bottom: 24px;
+  max-width: 600px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.question {
+  margin-bottom: 24px;
+}
+
+.question h2 {
+  /* Question titles use Jost and are set in uppercase to mirror navigation styling */
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+  margin-bottom: 8px;
+  color: #4b4f55;
+  text-transform: uppercase;
+}
+
+.question .small {
+  display: block;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 25px;
+  color: #777;
+  text-transform: none;
+}
+
+/* Main heading in form panel */
+.form-panel h1 {
+  /* Use Cormorant Garamond for the primary headline */
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 46px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #4b4f55;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.option-btn {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  background: #ffffff;
+  color: #4b4f55;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.option-btn:hover {
+  background: #eee;
+}
+
+.option-btn.selected {
+  background: #406fd2;
+  border-color: #406fd2;
+  color: #ffffff;
+}
+
+/* Results panel styles */
+.placeholder {
+  font-size: 14px;
+  color: #a0a0a0;
+  padding: 16px 0;
+}
+
+.range-block {
+  margin-bottom: 20px;
+}
+
+.range-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #406fd2;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+}
+
+.range-value {
+  font-size: 32px;
+  font-weight: 400;
+  margin-top: 4px;
+  font-family: 'Jost', sans-serif;
+}
+
+.range-note {
+  font-size: 12px;
+  color: #b5b5b5;
+  margin-top: 4px;
+}
+
+.soft-costs-title {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 6px;
+  color: #406fd2;
+  font-family: 'Jost', sans-serif;
+}
+
+#soft-costs-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 20px 0;
+}
+
+#soft-costs-list li {
+  font-size: 12px;
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+}
+
+#soft-costs-list li.highlight {
+  color: #406fd2;
+}
+
+.total-bar {
+  border-top: 1px solid #5a5f66;
+  padding-top: 12px;
+  margin-bottom: 20px;
+}
+
+.t-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #406fd2;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+}
+
+.t-value {
+  font-size: 28px;
+  font-weight: 400;
+  margin-top: 4px;
+  font-family: 'Jost', sans-serif;
+}
+
+.insights {
+  font-size: 12px;
+  color: #d5d5d5;
+  margin-bottom: 20px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+}
+
+.insights ul {
+  padding-left: 16px;
+  margin: 8px 0 0 0;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.actions button {
+  padding: 6px 12px;
+  border: none;
+  background: #406fd2;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+}
+
+.actions button:hover {
+  background: #2f54aa;
+}
+
+.disclaimer {
+  font-size: 10px;
+  color: #b5b5b5;
+  margin-top: 20px;
+  line-height: 1.4;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+}
+
+/* Call to action */
+.cta {
+  font-size: 12px;
+  color: #f5f5f5;
+  margin-top: 12px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+}
+
+.cta a {
+  color: #406fd2;
+  text-decoration: underline;
+}
+
+.cta a:hover {
+  color: #2f54aa;
+}
+
+/* CTA button */
+.cta-btn {
+  margin-left: 8px;
+  padding: 6px 12px;
+  background: #406fd2;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: none;
+}
+
+.cta-btn:hover {
+  background: #2f54aa;
+}
