@@ -1,5 +1,11 @@
 /* Basic styles for the cost calculator micro‑app */
 
+/* Define theme variables for accent colours */
+:root {
+  --accent-color: #8ca8e4; /* lighter blue for better contrast on dark panel */
+  --accent-hover: #6f93dd; /* hover state colour */
+}
+
 body {
   /* Use the Jost font family for body copy as specified in the Latitude 37 brand guide */
   font-family: 'Jost', sans-serif;
@@ -124,7 +130,7 @@ body {
 .options {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 12px;
 }
 
 .option-btn {
@@ -145,11 +151,11 @@ body {
   background: #eee;
 }
 
-.option-btn.selected {
-  background: #406fd2;
-  border-color: #406fd2;
-  color: #ffffff;
-}
+  .option-btn.selected {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: #ffffff;
+  }
 
 /* Results panel styles */
 .placeholder {
@@ -165,7 +171,7 @@ body {
 .range-label {
   font-size: 12px;
   text-transform: uppercase;
-  color: #406fd2;
+  color: var(--accent-color);
   font-family: 'Jost', sans-serif;
   font-weight: 400;
 }
@@ -187,7 +193,7 @@ body {
   font-size: 14px;
   font-weight: 400;
   margin-bottom: 6px;
-  color: #406fd2;
+  color: var(--accent-color);
   font-family: 'Jost', sans-serif;
 }
 
@@ -207,7 +213,7 @@ body {
 }
 
 #soft-costs-list li.highlight {
-  color: #406fd2;
+  color: var(--accent-color);
 }
 
 .total-bar {
@@ -219,7 +225,7 @@ body {
 .t-label {
   font-size: 12px;
   text-transform: uppercase;
-  color: #406fd2;
+  color: var(--accent-color);
   font-family: 'Jost', sans-serif;
   font-weight: 400;
 }
@@ -239,6 +245,19 @@ body {
   font-weight: 300;
 }
 
+/* Additional notes about programme timing and cost assumptions */
+.notes {
+  margin-top: 16px;
+}
+.notes p {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #d5d5d5;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  margin: 4px 0;
+}
+
 .insights ul {
   padding-left: 16px;
   margin: 8px 0 0 0;
@@ -253,7 +272,7 @@ body {
 .actions button {
   padding: 6px 12px;
   border: none;
-  background: #406fd2;
+  background: var(--accent-color);
   color: #ffffff;
   cursor: pointer;
   border-radius: 6px;
@@ -263,7 +282,7 @@ body {
 }
 
 .actions button:hover {
-  background: #2f54aa;
+  background: var(--accent-hover);
 }
 
 .disclaimer {
@@ -285,19 +304,19 @@ body {
 }
 
 .cta a {
-  color: #406fd2;
+  color: var(--accent-color);
   text-decoration: underline;
 }
 
 .cta a:hover {
-  color: #2f54aa;
+  color: var(--accent-hover);
 }
 
 /* CTA button */
 .cta-btn {
   margin-left: 8px;
   padding: 6px 12px;
-  background: #406fd2;
+  background: var(--accent-color);
   color: #ffffff;
   border: none;
   border-radius: 6px;
@@ -310,5 +329,5 @@ body {
 }
 
 .cta-btn:hover {
-  background: #2f54aa;
+  background: var(--accent-hover);
 }

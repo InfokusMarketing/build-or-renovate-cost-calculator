@@ -83,21 +83,15 @@ function calculate() {
   // Design & documentation – 9–14% of construction
   const dLo = lo * 0.09;
   const dHi = hi * 0.14;
-  softItems.push({ name: 'Design & documentation', lo: dLo, hi: dHi, highlight: false });
+  softItems.push({ name: 'Design & documentation (external architect)', lo: dLo, hi: dHi, highlight: false });
   // Planning, permits & approvals – fixed range
   softItems.push({ name: 'Planning, permits & approvals', lo: 18000, hi: 55000, highlight: false });
   // Demolition & site clearance – only for rebuild
   if (type === 'rebuild') {
     softItems.push({ name: 'Demolition & site clearance', lo: 38000, hi: 95000, highlight: true });
   }
-  // Structural & soil reports – depends on site complexity
-  const siteLo = site === 'complex' ? 14000 : 7000;
-  const siteHi = site === 'complex' ? 38000 : 18000;
-  softItems.push({ name: 'Structural & soil reports', lo: siteLo, hi: siteHi, highlight: false });
-  // Landscaping & external works – depends on finish
-  const lLo = finish === 'bespoke' ? 65000 : 28000;
-  const lHi = finish === 'bespoke' ? 200000 : 90000;
-  softItems.push({ name: 'Landscaping & external works', lo: lLo, hi: lHi, highlight: true });
+  // Structural & soil reports: excluded from calculation (covered by Latitude 37)
+  // Landscaping & external works: excluded from calculation (budget separately)
   // Temporary accommodation – only when moving out
   if (occupancy === 'out') {
     softItems.push({ name: 'Temporary accommodation', lo: 36000, hi: 130000, highlight: true });
@@ -152,6 +146,21 @@ function getInsights() {
 }
 
 /**
+ * Provide explanatory notes about programme timing, cost escalation and land holding costs.
+ * These notes are static and shown to all users once a result is displayed.
+ * @returns {string[]}
+ */
+function getAdditionalNotes() {
+  return [
+    '<strong>Programme timing:</strong> from a decision today to handover typically spans around 2.5 years (26–34 months). This encompasses design, documentation, approvals and construction.',
+    '<strong>Cost escalation:</strong> allowances are typically around 4% per year. Historically escalation has been closer to 6% but is currently slowing.',
+    '<strong>Reports:</strong> structural and soil reports are not included here; Latitude 37 covers these costs within our service.',
+    '<strong>Landscaping:</strong> landscaping and external works are excluded from this estimate and should be budgeted separately.',
+    '<strong>Worth understanding:</strong> a home of this scale isn’t just construction — it’s design, documentation, approvals and coordination. Early decisions have a compounding impact on overall timing.'
+  ];
+}
+
+/**
  * Render results to the DOM.
  */
 function updateResults() {
@@ -201,6 +210,20 @@ function updateResults() {
     ul.appendChild(li);
   });
   insightsEl.appendChild(ul);
+
+  // Additional notes (static explanatory content)
+  const notesEl = document.getElementById('notes');
+  if (notesEl) {
+    const notes = getAdditionalNotes();
+    // Render as separate paragraphs for clarity
+    notesEl.innerHTML = '';
+    notes.forEach(note => {
+      const p = document.createElement('p');
+      // Use innerHTML so that strong tags are rendered as bold
+      p.innerHTML = note;
+      notesEl.appendChild(p);
+    });
+  }
 }
 
 /**

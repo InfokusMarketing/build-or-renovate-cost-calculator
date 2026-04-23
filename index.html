@@ -17,7 +17,7 @@
   <div id="app" class="container">
     <div id="form-section" class="panel form-panel">
       <h1>What could your project actually cost?</h1>
-      <p class="intro">Select the options below to build an indicative budget.  The ranges are based on typical Melbourne projects for 2024–25 and include soft costs that are often overlooked.</p>
+      <p class="intro">Select the options below to build an indicative budget. The ranges are based on recent typical Melbourne projects. This is a guide only and not a quote for Latitude 37 or any other builder.</p>
 
       <!-- Direction -->
       <div class="question" data-group="type">
@@ -25,7 +25,6 @@
         <div class="options">
           <button class="option-btn" data-value="reno" title="Renovating an existing home">Renovating</button>
           <button class="option-btn" data-value="rebuild" title="Demolish and rebuild the home from scratch">Demolish &amp; rebuild</button>
-          <button class="option-btn" data-value="unsure" title="Not sure which option yet">Not sure yet</button>
         </div>
       </div>
 
@@ -99,12 +98,15 @@
           <div class="t-value" id="total-range">—</div>
         </div>
         <div class="insights" id="insights"></div>
+
+        <!-- Additional notes about timing, escalation and land holding costs -->
+        <div class="notes" id="notes"></div>
         <div class="actions">
           <button id="print-btn">↓ Print / save</button>
           <button id="copy-btn">↗ Copy summary</button>
         </div>
         <div class="disclaimer">
-          This tool provides an estimate of broad costs only, based on typical Melbourne projects as at 2024–25. It is intended to support early conversations and does not replace a detailed brief or quantity surveyor estimate.
+          This tool provides an estimate of broad costs only, based on typical Melbourne projects. It is not a quote or offer from Latitude 37 or any other builder. Use it as a guide to support early conversations — it does not replace a detailed brief or quantity surveyor estimate.
         </div>
         <div class="cta">Want a clearer picture of your individual position?
           <button class="cta-btn" onclick="window.open('https://www.l37.com.au/contact/', '_blank')">Contact our team</button>
