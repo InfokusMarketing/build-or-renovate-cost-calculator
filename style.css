@@ -331,3 +331,42 @@ body {
 .cta-btn:hover {
   background: var(--accent-hover);
 }
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  /* Stack panels vertically on mobile */
+  .container {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  /* Remove right border and adjust padding for the form */
+  .form-panel {
+    border-right: none;
+    border-bottom: 1px solid #d8d7d3;
+    padding: 24px;
+  }
+
+  /* Result panel occupies full width on mobile */
+  .result-panel {
+    width: 100%;
+    height: auto;
+    padding: 24px;
+  }
+
+  /* Option buttons stack and expand to full width for easier tapping */
+  .options {
+    gap: 8px;
+  }
+  .option-btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Reduce headline sizes slightly on mobile for better fit */
+  .range-value {
+    font-size: 28px;
+  }
+  .t-value {
+    font-size: 24px;
+  }
+}
